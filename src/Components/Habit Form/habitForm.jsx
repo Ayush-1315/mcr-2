@@ -1,14 +1,17 @@
 import { useState } from "react";
 
 export const HabitForm = ({
+  _id = 0,
   name = "",
   repeat = "Daily",
   goal = 0,
   time = 0,
   startDay = 0,
-  onFinish
+  edit = false,
+  onFinish,
+  onEdit,
 }) => {
-    console.log(name,repeat,goal,time,startDay)
+
   const [formData, setFormData] = useState({
     name,
     repeat,
@@ -62,16 +65,24 @@ export const HabitForm = ({
         setShowOptions(defaultOptions);
     }
   };
-  const submitForm=(e)=>{
+  const submitForm = (e) => {
     e.preventDefault();
-    typeof(onFinish)==='function' && onFinish(formData);
-    setFormData({name:"",
-        repeat:0,
-        goal:0,
-        time:0,
-        startDay:0})
-        e.target.reset();
-  }
+    if (edit) {
+      console.log(formData);
+      typeof onEdit === "function" && onEdit({ _id, ...formData });
+    } else {
+      typeof onFinish === "function" && onFinish(formData);
+    }
+    setFormData({
+      _id: 0,
+      name: "",
+      repeat: 0,
+      goal: 0,
+      time: 0,
+      startDay: 0,
+    });
+    e.target.reset();
+  };
   return (
     <form onSubmit={submitForm}>
       <label htmlFor="name">NAME</label>
@@ -110,9 +121,16 @@ export const HabitForm = ({
           </option>
         ))}
       </select>
-      <label htmlFor="time">TIME  OF DAY</label>
-      <select name="time" id="time" onChange={(e)=>changeHandler("time",e.target.value)} defaultValue={time}>
-        <option value="0" disabled>Select</option>
+      <label htmlFor="time">TIME OF DAY</label>
+      <select
+        name="time"
+        id="time"
+        onChange={(e) => changeHandler("time", e.target.value)}
+        defaultValue={time}
+      >
+        <option value="0" disabled>
+          Select
+        </option>
         <option value="Anytime">Anytime</option>
         <option value="Morning">Morning</option>
         <option value="Afternoon">Afternoon</option>
@@ -120,12 +138,19 @@ export const HabitForm = ({
         <option value="Night">Night</option>
       </select>
       <label htmlFor="startDay">START DATE</label>
-      <select name="startDay" id="startDay" onChange={(e)=>changeHandler("startDay",e.target.value)} defaultValue={startDay}>
-            <option value="0" disabled>Select</option>
-            <option value="Today">Today</option>
-            <option value="Tommorow">Tommorow</option>
+      <select
+        name="startDay"
+        id="startDay"
+        onChange={(e) => changeHandler("startDay", e.target.value)}
+        defaultValue={startDay}
+      >
+        <option value="0" disabled>
+          Select
+        </option>
+        <option value="Today">Today</option>
+        <option value="Tommorow">Tommorow</option>
       </select>
-      <input type="submit" placeholder="submit"/>
+      <input type="submit" placeholder="submit" />
     </form>
   );
 };

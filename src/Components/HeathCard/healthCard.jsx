@@ -8,7 +8,7 @@ export const HealthCard=({habit,showArchiveBtn,editValues})=>{
         <p>{time}</p>
         <p>{startDay}</p>
         <button onClick={()=>dispatch({type:"REMOVE",payload:_id})}>Remove Habit</button>
-        <button onClick={()=>editValues(habit)}>Edit</button>
+        <button onClick={()=>editValues({...habit,edit:true})}>Edit</button>
         {showArchiveBtn && <button onClick={()=>dispatch({type:"ARCHIVE",payload:_id})}>ARCHIVE </button>}
     </div>
 }

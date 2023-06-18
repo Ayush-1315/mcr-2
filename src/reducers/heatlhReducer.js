@@ -67,6 +67,7 @@ export const healthReducerFun=(state,action)=>{
             }
             console.log(newTask);
             return [...state,newTask];
+        case "EDIT":return state.map((habit)=>habit._id===payload._id?{...payload}:habit)
         case "REMOVE":return state.filter(({_id})=>_id!==payload);
         case "ARCHIVE":return state.map(habit=>habit._id===payload?{...habit,archived:true}:habit)
         default: return state;
