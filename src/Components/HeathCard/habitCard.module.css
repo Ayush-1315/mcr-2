@@ -1,0 +1,8 @@
+.hcard{
+    background-color: #39FF14 ;
+    filter: drop-shadow(0.3rem 0.3rem black);
+    width: 30vw;
+    height: 40vh;
+    filter: drop-shadow(0.6rem 0.6rem  black);
+    border: 0.3rem solid black;
+}

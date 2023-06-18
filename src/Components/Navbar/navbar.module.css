@@ -1,5 +1,14 @@
 .navbar{
     display: flex;
     justify-content: space-between;
-    
+    width: 100vw;
+    height: 10vh;
+    border: 0.3rem solid black;
+
+}
+.navbar a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-family: sans-serif;
 }

@@ -41,7 +41,7 @@ export const Home = () => {
         }}
         {...initialData}
       />}
-      <div>
+      <div className="habitsContainer">
         {nonArchivedHabits.length === 0 ? (
           <>
             <h2>Nothing To Show Here</h2>

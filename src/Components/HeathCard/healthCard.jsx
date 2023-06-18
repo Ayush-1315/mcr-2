@@ -1,9 +1,9 @@
 import { useHealth } from "../../Context/heatlhContext"
-
+import HabitCard from './habitCard.module.css';
 export const HealthCard=({habit,showArchiveBtn,editValues})=>{
     const {_id,name,time,startDay}=habit;
     const {dispatch} =useHealth();
-    return <div>
+    return <div className={HabitCard.hcard}>
         <h2>{name}</h2>
         <p>{time}</p>
         <p>{startDay}</p>
