@@ -1,8 +1,62 @@
-.hcard{
-    background-color: #39FF14 ;
+.hcard {
+    background-color: #39FF14;
     filter: drop-shadow(0.3rem 0.3rem black);
     width: 30vw;
     height: 40vh;
-    filter: drop-shadow(0.6rem 0.6rem  black);
+    filter: drop-shadow(0.6rem 0.6rem black);
     border: 0.3rem solid black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailsContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 25vw);
+    justify-content: center;
+    /* background-color:#ab20fd; */
+    height: 35vh;
+    width: 28vw;
+    /* grid-gap: 1.5rem; */
+}
+
+.hcard h2 {
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    text-overflow: ellipsis;
+    min-height: 11vh;
+
+    margin: 0;
+}
+
+.hcard p {
+    font-size: 1.8rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    width: 100%;
+    text-overflow: ellipsis;
+
+
+    margin: 0;
+}
+
+.buttonContainer {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hcard button {
+    width: 8vw;
+    height: 4vh;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    outline: none;
+    border: 0.2rem solid black;
+    filter: drop-shadow(0.2rem 0.2rem black);
 }

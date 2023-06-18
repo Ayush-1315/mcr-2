@@ -1,0 +1,8 @@
+.archivedContainer{
+    display: grid;
+    grid-template-columns: repeat(3,30vw);
+    grid-gap: 0.8rem;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+}

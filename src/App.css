@@ -2,17 +2,23 @@
   text-align: center;
   background-color: #FFFF00;
   min-height: 100vh;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 .habitsContainer{
   display: grid;
   grid-template-columns: repeat(3,30vw);
-  grid-gap: 2rem;
+  grid-gap: 0.8rem;
   align-items: center;
   justify-content: space-around;
+  min-height: 100vh;
 }
 form{
   height: 40vh;
   width: 50vw;
   display: grid;
   grid-template-columns: repeat(2,30vw);
+}
+::-webkit-scrollbar{
+  display: none;
 }

@@ -3,7 +3,7 @@
     justify-content: space-between;
     width: 100vw;
     height: 10vh;
-    border: 0.3rem solid black;
+    border-bottom: 0.3rem solid black;
 
 }
 .navbar a{
@@ -11,4 +11,19 @@
     color: black;
     font-weight: 500;
     font-family: sans-serif;
+}
+.logo{
+    font-size: 5rem;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+.archive{
+    border-left:0.3rem solid black ;
+    font-size: 3.5rem;
+   
+    width: 20vw;
+}
+.archive a{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:900 ;
 }

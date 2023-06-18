@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useHealth } from "../../Context/heatlhContext";
 import { HealthCard } from "../../Components/HeathCard/healthCard";
 import { HabitForm } from "../../Components/Habit Form/habitForm";
+import home from './home.module.css';
 
 export const Home = () => {
   useEffect(() => {
@@ -20,7 +21,7 @@ export const Home = () => {
   });
   return (
     <>
-      Habits Here
+
       { showForm && <HabitForm
         onFinish={(data) => {
             dispatch({ type: "ADD_NEW", payload: data });
@@ -60,7 +61,7 @@ export const Home = () => {
           ))
         )}
       </div>
-      <button onClick={()=>setShowForm(true)}>Add new Habit</button>
+      <button className={home.btn} onClick={()=>setShowForm(true)}>Add new Habit</button>
     </>
   );
 };

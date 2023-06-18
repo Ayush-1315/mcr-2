@@ -1,0 +1,14 @@
+.btn{
+    background-color:whitesmoke;
+    position: fixed;
+    z-index: 99;
+    transform: translateY(-20vh) translateX(40vw);
+    outline: none;
+    border: 0.3rem solid black;
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    width: 10vw;
+    height: 8vh;
+    filter: drop-shadow(0.3rem 0.3rem black);
+}
